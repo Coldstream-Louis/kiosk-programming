@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/order_style.css" >
+
+        <!--<script src="js/script.js" defer></script>-->
+        <!--<script src="https://vuejs.org/js/vue.js"></script>-->
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/pub-main.js" defer></script>
+        <script src="js/ordering.js" defer></script>
+        <title>Lab</title>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Burger Pub</h1>
+            <img src="https://awscloudfront.kempinski.com/1042/kempinski-hotel-bristol-berlin_gastronomie_bristol-bar_header.jpg" alt="Bar" title="Bar">
+        </header>
+        <main id="mainID">
+            <div id="left">
+                <!--Burger-->
+                <section id = "burger">
+                    <h2>Select your burger</h2>
+                    <p>We have multiple choices</p>
+                    <table id="burger_table">
+                        <!--table view-->
+                        <thead>
+                        <tr id="burger_name">
+                            <th>Cheese burger<input type="checkbox" name="Burger" value="Cheese burger"></th>
+                            <th>Chicken burger<input type="checkbox" name="Burger" value="Chicken burger"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr id="burger_image">
+                            <!--row one-->
+                            <td>
+                                <!--one data-->
+                                <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/600px-Cheeseburger.jpg"
+                                     alt="Cheese Burger" title="Burger" width="200">
+                            </td>
+                            <td>
+                                <img src = "https://upload.wikimedia.org/wikipedia/commons/d/dd/Taiwan_McDonald%27s_chicken_rice_burger_20050218.jpg"
+                                     alt="Chicken Burger" title="Burger" width="200">
+                            </td>
+                        </tr>
+                        <tr id="burger_text">
+                            <!--row two-->
+                            <td>
+                                <ul class = "burger_list">
+                                    <li>Include <strong>lactose, gluten</strong></li>
+                                    <li>Calorie: 303.1kcal</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "burger_list">
+                                    <li>Include <strong>gluten</strong></li>
+                                    <li>Calorie: 430kcal</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <!--Beverage-->
+                <section id = "beverage">
+                    <h2>Select your beverage</h2>
+                    <p>We have multiple choices</p>
+                    <table id="beverage_table">
+                        <!--table view-->
+                        <thead>
+                        <tr>
+                            <th>Orange Juice</th>
+                            <th>Black Beer</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <!--row one-->
+                            <td>
+                                <!--one data-->
+                                <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Orange_juice_1_edit1.jpg/1280px-Orange_juice_1_edit1.jpg"
+                                     alt="Orange Juice" title="Juice" height="200">
+                            </td>
+                            <td>
+                                <img src = "https://upload.wikimedia.org/wikipedia/commons/9/99/Glass_of_Köstritzer_Schwarzbier.jpg"
+                                     alt="Black Beer" title="Beer" height="200">
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--row two-->
+                            <td>
+                                <ul class = "beverage_list">
+                                    <li>
+                                        <label for="Brand">Choose Brand</label>
+                                        <select id="Brand" name = "JuiceBrand">
+                                            <option>Tropicana</option>
+                                            <option>Oasis</option>
+                                            <option>Orangina Schweppes</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "beverage_list">
+                                    <li>
+                                        Choose temperature
+                                        <input type="radio" name="Temperature" value="hot"> Hot
+                                        <input type="radio" name="Temperature" value="cold" checked = "checked"> cold
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="right">
+                <div id="Orders">
+                    <h2>Order Info</h2><br>
+                    <h3>Waiting</h3><br>
+                    <ol>
+                        <li v-for="(item, key) in orders" v-if="!item.done">
+                            {{ key }}
+                        </li>
+                    </ol>
+                    <h3>Done</h3><br>
+                    <ol>
+                        <li v-for="(item, key) in orders" v-if="item.done">
+                            {{ key }}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <section id = "submit">
+                <button type="submit" id = "submit_button" v-on:click="placeOrder()"><img src="img/submit.png" width="20">Send to kitchen</button>
+            </section>
+            <hr>
+        </main>
+        <footer>
+           <p>&commat;lidong.liu</p>
+        </footer>
+    </body>
+</html>

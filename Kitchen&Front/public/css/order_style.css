@@ -1,0 +1,118 @@
+html{
+    font-size: 30px;
+}
+
+body{
+    font-family: Helvetica;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    margin:0;
+}
+
+
+header{
+    height: 100px;
+    overflow: hidden;
+}
+
+header h1{
+    position: absolute;
+    margin-left: 1em;
+}
+
+header img{
+    opacity: 0.3;
+    width: 100%;
+    height: auto;
+}
+
+
+section{
+    padding: 1em;
+}
+
+li{
+    text-align: left;
+    padding: 0;
+    /*margin: 0 20%;*/
+}
+
+table{
+    text-align: center;
+
+}
+
+table thead{
+    text-align: left;
+}
+
+footer{
+    height: 50px;
+    text-align: center;
+}
+
+#mainID{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height:880px;
+    margin: 0;
+}
+
+#left{
+    width: 80%;
+    height: 600px;
+}
+
+#right{
+    width: 20%;
+    /*padding-top: 30px;*/
+    text-align: center;
+    background-color: palegoldenrod;
+    overflow: scroll;
+    height: 800px;
+}
+
+#beverage_table{
+    width: 80%;
+    margin: 0 10%;
+}
+
+#burger_table{
+    width: 100%;
+}
+
+
+#beverage{
+    background-color: azure;
+    border: 5px dashed cornflowerblue;
+}
+
+#burger{
+    background-color: cornflowerblue;
+    border: 5px dashed azure;
+}
+
+.beverage_list{
+    list-style: none;
+}
+
+#submit{
+    width:100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    align-self: flex-end;
+    width: 100%;
+}
+
+@media screen and(aspect-ratio: 16/9){
+    body{
+        font-size: 0.3em;
+    }
+}
