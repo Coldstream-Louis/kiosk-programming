@@ -1,4 +1,3 @@
-# kiosk-programming
 # juicifer-skeleton
 This project skeleton gives a folder structure and a basic communication pattern to quickly build prototypes of real-time apps. 
 
@@ -18,3 +17,18 @@ Do not use this skeleton code for creating production apps. Security and stabili
 8. When you other some standard drinks or DIY drinks in kiosk view, your order will appear in the kitchen view. 
 
 That should be enough to get started. Happy tinkering!
+
+
+Who did what: 
+
+CODE: 
+Lidong: Kitchen view HTML/CSS, JS, make the interface of the kitchen ready, connect kitchen to standard drinks’ part, improve the HTML/CSS of DIY part
+
+Shuyang: basic element HTML/CSS for each view, Payment successful view HTML/CSS, yourCart view(unused), JS for menu and standard drinks view, make the interface of the standard and DIY part ready, connect kitchen to DIY part, improve the HTML/CSS in standard drinks’ view, establish the GitHub repository. JSON data of standard drinks and ingredients
+ 
+Sjoerd: original DIY view HTML/CSS, JS
+ 
+Amanda: connect front page and DIY page with menu page, HTML/CSS for menu and standard drinks, type the ingredients, search the ingredients’ image and put them in CSV file. List the standard drinks
+
+Rui: helped doing menu view
+
